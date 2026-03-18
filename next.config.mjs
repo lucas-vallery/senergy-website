@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: '/senergy-website',
   images: {
     unoptimized: true,
   },

@@ -1,14 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function RootPage() {
-  const router = useRouter();
-
   useEffect(() => {
-    router.replace('/fr');
-  }, [router]);
+    window.location.replace(window.location.pathname.replace(/\/$/, '') + '/fr/');
+  }, []);
 
   return null;
 }
