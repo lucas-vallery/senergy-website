@@ -29,22 +29,22 @@ export default async function SAVPage({ params }: { params: { locale: string } }
 
   const services = [
     {
-      icon: <Zap size={24} className="text-secondary" />,
+      icon: <Zap size={24} className="text-primary" />,
       title: t('service1Title'),
       desc: t('service1Desc'),
     },
     {
-      icon: <Shield size={24} className="text-secondary" />,
+      icon: <Shield size={24} className="text-primary" />,
       title: t('service2Title'),
       desc: t('service2Desc'),
     },
     {
-      icon: <Package size={24} className="text-secondary" />,
+      icon: <Package size={24} className="text-primary" />,
       title: t('service3Title'),
       desc: t('service3Desc'),
     },
     {
-      icon: <Headphones size={24} className="text-secondary" />,
+      icon: <Headphones size={24} className="text-primary" />,
       title: t('service4Title'),
       desc: t('service4Desc'),
     },
@@ -64,7 +64,7 @@ export default async function SAVPage({ params }: { params: { locale: string } }
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}
@@ -177,9 +177,9 @@ export default async function SAVPage({ params }: { params: { locale: string } }
               {services.map((s, i) => (
                 <div
                   key={i}
-                  className="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 hover:border-secondary/30 hover:shadow-md transition-all text-center"
+                  className="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 hover:border-primary/20 hover:shadow-md transition-all text-center"
                 >
-                  <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mx-auto mb-4">
                     {s.icon}
                   </div>
                   <h3 className="font-headline font-semibold text-on-surface mb-2">{s.title}</h3>
@@ -200,8 +200,8 @@ export default async function SAVPage({ params }: { params: { locale: string } }
                   key={i}
                   className="flex items-center gap-3 bg-surface-container-low rounded-xl px-5 py-4 border border-outline-variant/20"
                 >
-                  <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-on-secondary-container font-bold text-sm">{i + 1}</span>
+                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-sm">{i + 1}</span>
                   </div>
                   <span className="text-sm font-medium text-on-surface">{c}</span>
                 </div>

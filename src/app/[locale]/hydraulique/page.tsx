@@ -29,50 +29,26 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
   const products = [
     {
       id: 'groupes',
-      title: 'Groupe hydraulique standard',
-      pressure: '250 bar',
-      flow: '20 L/min',
-      material: 'Acier',
+      title: t('groupsTitle'),
+      desc: t('groupsDesc'),
       hasImage: true,
     },
     {
       id: 'distributeurs',
-      title: 'Distributeur hydraulique',
-      pressure: '350 bar',
-      flow: '60 L/min',
-      material: 'Aluminium',
+      title: t('distributorsTitle'),
+      desc: t('distributorsDesc'),
       hasImage: false,
     },
     {
       id: 'verins',
-      title: 'Vérins hydrauliques',
-      pressure: '200 bar',
-      flow: '—',
-      material: 'Acier chromé',
+      title: t('cylindersTitle'),
+      desc: t('cylindersDesc'),
       hasImage: false,
     },
     {
       id: 'pompes',
-      title: 'Pompes industrielles',
-      pressure: '400 bar',
-      flow: '100 L/min',
-      material: 'Fonte',
-      hasImage: false,
-    },
-    {
-      id: 'sur-mesure',
-      title: 'Groupe sur mesure',
-      pressure: 'Sur devis',
-      flow: 'Sur devis',
-      material: 'Au choix',
-      hasImage: false,
-    },
-    {
-      id: 'compact',
-      title: 'Pack hydraulique compact',
-      pressure: '180 bar',
-      flow: '12 L/min',
-      material: 'Aluminium',
+      title: t('pumpsTitle'),
+      desc: t('pumpsDesc'),
       hasImage: false,
     },
   ];
@@ -87,7 +63,7 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}
@@ -122,57 +98,19 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
                   </ul>
                 </div>
 
-                {/* Technical specs filters */}
+                {/* Expertise highlights */}
                 <div className="bg-surface-container-high rounded-xl p-6">
                   <h3 className="font-label font-bold text-on-surface uppercase tracking-widest text-xs mb-4">
-                    Spécifications
+                    Notre expertise
                   </h3>
-                  <div className="space-y-4">
-                    <div>
-                      <label className="font-label text-xs uppercase tracking-widest text-on-surface-variant block mb-2">
-                        Pression max (bar)
-                      </label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="500"
-                        defaultValue="400"
-                        className="w-full accent-secondary"
-                      />
-                      <div className="flex justify-between font-label text-xs text-on-surface-variant mt-1">
-                        <span>0</span>
-                        <span>500 bar</span>
-                      </div>
-                    </div>
-                    <div>
-                      <label className="font-label text-xs uppercase tracking-widest text-on-surface-variant block mb-2">
-                        Débit (L/min)
-                      </label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="120"
-                        defaultValue="100"
-                        className="w-full accent-secondary"
-                      />
-                      <div className="flex justify-between font-label text-xs text-on-surface-variant mt-1">
-                        <span>0</span>
-                        <span>120 L/min</span>
-                      </div>
-                    </div>
-                    <div>
-                      <label className="font-label text-xs uppercase tracking-widest text-on-surface-variant block mb-2">
-                        Matériau
-                      </label>
-                      <select className="w-full bg-surface-container text-on-surface text-sm font-label px-3 py-2 rounded border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary/30">
-                        <option value="">Tous</option>
-                        <option>Acier</option>
-                        <option>Aluminium</option>
-                        <option>Fonte</option>
-                        <option>Acier chromé</option>
-                      </select>
-                    </div>
-                  </div>
+                  <ul className="space-y-2">
+                    {[t('feature1'), t('feature2'), t('feature3'), t('feature4')].map(feat => (
+                      <li key={feat} className="flex items-center gap-2 text-sm text-on-surface-variant font-label">
+                        <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 {/* Contact CTA */}
@@ -222,23 +160,14 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
                         <h3 className="font-headline font-bold text-on-surface text-base mb-3">
                           {product.title}
                         </h3>
-                        {/* Spec chips */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <span className="bg-surface-container text-on-surface-variant font-label text-xs px-2 py-1 rounded uppercase tracking-wider">
-                            {product.pressure}
-                          </span>
-                          <span className="bg-surface-container text-on-surface-variant font-label text-xs px-2 py-1 rounded uppercase tracking-wider">
-                            {product.flow}
-                          </span>
-                          <span className="bg-surface-container text-on-surface-variant font-label text-xs px-2 py-1 rounded uppercase tracking-wider">
-                            {product.material}
-                          </span>
-                        </div>
+                        <p className="text-on-surface-variant text-xs leading-relaxed mb-4">
+                          {product.desc}
+                        </p>
                         <Link
                           href={`/${locale}/contact`}
                           className="inline-flex items-center gap-2 bg-[#b8f568] text-[#467000] font-headline font-bold text-xs px-4 py-2 rounded hover:bg-[#9dd84f] transition-colors"
                         >
-                          Voir Détails <ArrowRight size={12} />
+                          {tCommon('requestQuote')} <ArrowRight size={12} />
                         </Link>
                       </div>
                     </div>
@@ -249,68 +178,35 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
           </div>
         </section>
 
-        {/* Technical comparison table */}
+        {/* Custom design section */}
         <section className="bg-surface-container-low py-16">
           <div className="max-w-7xl mx-auto px-12">
             <div className="mb-10">
               <span className="font-label text-secondary font-bold uppercase tracking-widest text-xs block mb-3">
-                Comparatif technique
+                Sur mesure
               </span>
               <h2 className="font-headline font-black text-on-surface text-3xl tracking-tight">
-                Tableau de spécifications
+                {t('customTitle')}
               </h2>
             </div>
-            <div className="rounded-xl overflow-hidden border border-outline-variant/20">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-primary text-white">
-                    <th className="text-left px-6 py-4 font-label font-bold uppercase tracking-widest text-xs">
-                      Produit
-                    </th>
-                    <th className="text-left px-6 py-4 font-label font-bold uppercase tracking-widest text-xs">
-                      Pression max
-                    </th>
-                    <th className="text-left px-6 py-4 font-label font-bold uppercase tracking-widest text-xs">
-                      Débit max
-                    </th>
-                    <th className="text-left px-6 py-4 font-label font-bold uppercase tracking-widest text-xs">
-                      Matériau
-                    </th>
-                    <th className="px-6 py-4" />
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-surface-container-high bg-surface-container-lowest">
-                  {products.map((product, i) => (
-                    <tr
-                      key={product.id}
-                      className={`hover:bg-surface-container-low transition-colors ${
-                        i % 2 === 0 ? '' : 'bg-surface-container/40'
-                      }`}
-                    >
-                      <td className="px-6 py-4 font-headline font-semibold text-on-surface">
-                        {product.title}
-                      </td>
-                      <td className="px-6 py-4 font-label text-on-surface-variant text-xs uppercase tracking-wider">
-                        {product.pressure}
-                      </td>
-                      <td className="px-6 py-4 font-label text-on-surface-variant text-xs uppercase tracking-wider">
-                        {product.flow}
-                      </td>
-                      <td className="px-6 py-4 font-label text-on-surface-variant text-xs uppercase tracking-wider">
-                        {product.material}
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <Link
-                          href={`/${locale}/contact`}
-                          className="inline-flex items-center gap-1 text-secondary font-headline font-bold text-xs hover:underline"
-                        >
-                          Devis <ArrowRight size={10} />
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <p className="text-on-surface-variant leading-relaxed">
+                {t('customText')}
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  t('feature1'), t('feature2'), t('feature3'),
+                  t('feature4'), t('feature5'), t('feature6'),
+                ].map(feat => (
+                  <li
+                    key={feat}
+                    className="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                    {feat}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

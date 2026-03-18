@@ -166,7 +166,7 @@ export default async function ProductsPage({ params }: { params: { locale: strin
   return (
     <>
       <Header />
-      <main className="pt-[104px]">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}

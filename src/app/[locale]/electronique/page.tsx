@@ -58,7 +58,7 @@ export default async function ElectronicsPage({ params }: { params: { locale: st
   return (
     <>
       <Header />
-      <main className="pt-[104px]">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}

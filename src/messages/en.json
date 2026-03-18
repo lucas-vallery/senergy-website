@@ -9,6 +9,7 @@
     "news": "News",
     "contact": "Contact",
     "products": "Products",
+    "allProducts": "All products",
     "radiocontrols": "Radio controls",
     "automations": "Automations",
     "sensors": "Sensors & detection",
@@ -73,7 +74,9 @@
     "ctaTitle": "Ready to start your project?",
     "ctaSubtitle": "Contact our experts for a personalized quote and tailored support",
     "viewAllNews": "View all news",
-    "viewAllProducts": "View all products"
+    "viewAllProducts": "View all products",
+    "ctaGreenTitle": "Your industrial project",
+    "ctaGreenSubtitle": "Electronics, hydraulics or bodywork — our Senergy experts guide you from design to commissioning."
   },
   "company": {
     "title": "Our company",

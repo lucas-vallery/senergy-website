@@ -30,20 +30,20 @@ export default async function BodyworkPage({ params }: { params: { locale: strin
     {
       num: '1',
       title: 'Analyse & Consultation',
-      desc: 'Étude de vos besoins, contraintes techniques et cahier des charges.',
-      checks: ['Audit du parc', 'Définition des specs', 'Choix des matériaux'],
+      desc: 'Étude de vos besoins opérationnels et contraintes techniques.',
+      checks: ['Audit de vos besoins', 'Définition du cahier des charges', 'Choix des matériaux'],
     },
     {
       num: '2',
       title: 'Conception & Fabrication',
-      desc: 'Bureau d\'études interne, fabrication sur-mesure dans notre atelier Reims.',
-      checks: ['Plans 3D', 'Soudure certifiée', 'Contrôle qualité'],
+      desc: 'Fabrication sur mesure dans notre atelier de Reims par nos carrossiers qualifiés.',
+      checks: ['Soudure MIG/TIG', 'Découpe plasma', 'Contrôle qualité'],
     },
     {
       num: '3',
       title: 'Livraison & SAV',
-      desc: 'Installation sur site, formation opérateurs, maintenance préventive.',
-      checks: ['Mise en service', 'Formation', 'Suivi annuel'],
+      desc: 'Mise en service sur site, homologation et suivi après-vente.',
+      checks: ['Mise en service', 'Homologation', 'SAV réactif'],
     },
   ];
 
@@ -65,17 +65,19 @@ export default async function BodyworkPage({ params }: { params: { locale: strin
     },
   ];
 
-  const specData = [
-    { label: 'Charge utile max', value: '20T' },
-    { label: 'Matériaux', value: 'Acier S355' },
-    { label: 'Certification', value: 'CE / NF' },
-    { label: 'Délai', value: '4–8 sem.' },
+  const workshopFeatures = [
+    t('feature1'),
+    t('feature2'),
+    t('feature3'),
+    t('feature4'),
+    t('feature5'),
+    t('feature6'),
   ];
 
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}
@@ -170,33 +172,32 @@ export default async function BodyworkPage({ params }: { params: { locale: strin
           </div>
         </section>
 
-        {/* Featured product specs block — bg-primary split card */}
+        {/* Workshop section */}
         <section className="bg-primary py-0">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
-              {/* Left: specs data */}
+              {/* Left: workshop content */}
               <div className="p-12 lg:p-16 flex flex-col justify-center">
                 <span className="font-label text-[#b8f568] font-bold uppercase tracking-widest text-xs block mb-4">
-                  Fiche technique
+                  Notre atelier
                 </span>
-                <h2 className="font-headline font-black text-white text-3xl tracking-tight mb-8">
-                  {t('customTitle')}
+                <h2 className="font-headline font-black text-white text-3xl tracking-tight mb-4">
+                  {t('workshopTitle')}
                 </h2>
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {specData.map(spec => (
-                    <div
-                      key={spec.label}
-                      className="bg-white/5 border border-white/10 rounded-xl p-4"
+                <p className="text-white/70 text-sm leading-relaxed mb-8">
+                  {t('workshopText')}
+                </p>
+                <ul className="grid grid-cols-2 gap-3 mb-8">
+                  {workshopFeatures.map(feat => (
+                    <li
+                      key={feat}
+                      className="flex items-center gap-2 text-white/80 text-sm"
                     >
-                      <div className="font-label text-[#b8f568] text-xs uppercase tracking-widest mb-1">
-                        {spec.label}
-                      </div>
-                      <div className="font-headline font-black text-white text-2xl">
-                        {spec.value}
-                      </div>
-                    </div>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#b8f568] flex-shrink-0" />
+                      {feat}
+                    </li>
                   ))}
-                </div>
+                </ul>
                 <Link
                   href={`/${locale}/contact`}
                   className="inline-flex items-center gap-2 bg-[#b8f568] text-[#467000] font-headline font-bold px-8 py-4 rounded hover:bg-[#9dd84f] transition-colors w-fit"
@@ -209,7 +210,7 @@ export default async function BodyworkPage({ params }: { params: { locale: strin
               <div className="relative min-h-[300px] lg:min-h-0">
                 <Image
                   src={`${basePath}/images/hydraulique-groupe-dinamic-oil.jpg`}
-                  alt="Carrosserie sur mesure"
+                  alt="Atelier carrosserie SENERGY"
                   fill
                   className="object-cover"
                 />
@@ -217,10 +218,10 @@ export default async function BodyworkPage({ params }: { params: { locale: strin
                 {/* Glassmorphic overlay card */}
                 <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 max-w-[200px]">
                   <p className="font-headline font-bold text-white text-sm mb-1">
-                    Fabrication Reims
+                    Atelier Reims
                   </p>
                   <p className="font-label text-white/60 text-xs uppercase tracking-widest">
-                    Atelier certifié
+                    Carrossiers qualifiés
                   </p>
                 </div>
               </div>
@@ -228,31 +229,6 @@ export default async function BodyworkPage({ params }: { params: { locale: strin
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="bg-secondary-container py-20">
-          <div className="max-w-7xl mx-auto px-12 text-center">
-            <h2 className="font-headline font-black text-on-secondary-container text-4xl md:text-5xl tracking-tight mb-6">
-              Votre projet carrosserie
-            </h2>
-            <p className="text-on-secondary-container/70 text-lg font-label max-w-2xl mx-auto mb-10">
-              Nos carrossiers qualifiés réalisent vos projets sur mesure avec des matériaux de qualité certifiée.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 bg-primary text-white font-headline font-bold px-8 py-4 rounded hover:bg-primary-container transition-all shadow-lg"
-              >
-                {tCommon('requestQuote')} <ArrowRight size={18} />
-              </Link>
-              <a
-                href="tel:+33326790050"
-                className="inline-flex items-center gap-2 bg-on-secondary-container/10 border border-on-secondary-container/30 text-on-secondary-container font-headline font-bold px-8 py-4 rounded hover:bg-on-secondary-container/20 transition-all"
-              >
-                (0)3.26.79.00.50
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

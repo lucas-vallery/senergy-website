@@ -22,7 +22,7 @@ export default function Hero({
 
   if (pattern === 'page') {
     return (
-      <section className="relative bg-primary-container py-16 overflow-hidden">
+      <section className="relative bg-primary-container pt-[calc(104px+4rem)] pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute top-0 right-0 w-1/2 h-full"

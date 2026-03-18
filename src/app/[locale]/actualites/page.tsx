@@ -65,7 +65,7 @@ export default async function NewsPage({ params }: { params: { locale: string } 
   return (
     <>
       <Header />
-      <main className="pt-[104px]">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}

@@ -50,6 +50,32 @@ export default async function HomePage({ params }: { params: { locale: string } 
           size="large"
         />
 
+        {/* Green CTA */}
+        <section className="bg-secondary-container py-20">
+          <div className="max-w-7xl mx-auto px-12 text-center">
+            <h2 className="font-headline font-black text-on-secondary-container text-4xl md:text-5xl tracking-tight mb-6">
+              {t('ctaGreenTitle')}
+            </h2>
+            <p className="text-on-secondary-container/70 text-lg font-label max-w-2xl mx-auto mb-10">
+              {t('ctaGreenSubtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href={`/${locale}/contact`}
+                className="inline-flex items-center gap-2 bg-primary text-white font-headline font-bold px-8 py-4 rounded hover:bg-primary-container transition-all shadow-lg"
+              >
+                {tCommon('contactUs')} <ArrowRight size={18} />
+              </Link>
+              <a
+                href="tel:+33326790050"
+                className="inline-flex items-center gap-2 bg-on-secondary-container/10 border border-on-secondary-container/30 text-on-secondary-container font-headline font-bold px-8 py-4 rounded hover:bg-on-secondary-container/20 transition-all"
+              >
+                (+33) (0)3.26.79.00.50
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Industrial Ecosystem — 3 division cards */}
         <section className="bg-surface py-32 relative overflow-hidden">
           {/* Section label background decor */}
@@ -225,7 +251,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
                   { value: '30', label: 'Ans d\'expérience' },
                   { value: '3', label: 'Divisions métier' },
                   { value: 'SAV', label: 'Réactif & certifié' },
-                  { value: 'ISO', label: 'Certifications' },
+                  { value: 'CE', label: 'Certifications' },
                 ].map((stat, i) => (
                   <div
                     key={i}

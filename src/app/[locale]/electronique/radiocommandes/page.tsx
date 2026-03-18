@@ -77,7 +77,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
   return (
     <>
       <Header />
-      <main className="pt-[104px]">
+      <main className="">
         <Hero
           title={t('heroTitle')}
           subtitle={t('heroSubtitle')}

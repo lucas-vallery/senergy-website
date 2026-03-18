@@ -9,6 +9,7 @@
     "news": "Actualités",
     "contact": "Contact",
     "products": "Produits",
+    "allProducts": "Tous les produits",
     "radiocontrols": "Radiocommandes",
     "automations": "Automatismes",
     "sensors": "Capteurs & détection",
@@ -73,7 +74,9 @@
     "ctaTitle": "Prêt à démarrer votre projet ?",
     "ctaSubtitle": "Contactez nos experts pour un devis personnalisé et un accompagnement sur mesure",
     "viewAllNews": "Voir toutes les actualités",
-    "viewAllProducts": "Voir tous les produits"
+    "viewAllProducts": "Voir tous les produits",
+    "ctaGreenTitle": "Votre projet industriel",
+    "ctaGreenSubtitle": "Électronique, hydraulique ou carrosserie — nos experts Senergy vous accompagnent de la conception à la mise en service."
   },
   "company": {
     "title": "Notre société",
