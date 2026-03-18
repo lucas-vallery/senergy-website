@@ -136,7 +136,7 @@ export default async function NewsPage({ params }: { params: { locale: string } 
                     </div>
                   </div>
                   <div className="p-6">
-                    <span className="inline-block bg-navy/5 text-navy text-xs font-semibold px-2.5 py-1 rounded mb-3">
+                    <span className="inline-block bg-orange/10 text-orange text-xs font-semibold px-2.5 py-1 rounded mb-3">
                       {news.category}
                     </span>
                     <h3 className="font-barlow font-bold text-navy text-lg mb-2 leading-tight group-hover:text-orange transition-colors">

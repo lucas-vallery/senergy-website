@@ -83,8 +83,8 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-          <CheckCircle size={32} className="text-green-600" />
+        <div className="w-16 h-16 bg-orange/10 rounded-full flex items-center justify-center mb-4">
+          <CheckCircle size={32} className="text-orange" />
         </div>
         <h3 className="font-barlow text-2xl font-bold text-navy mb-2">{t('success.title')}</h3>
         <p className="text-gray-500 max-w-sm">{t('success.text')}</p>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
@@ -108,14 +109,8 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href={`/${locale}`} className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-                <span className="text-white font-barlow font-bold text-lg">S</span>
-              </div>
-              <div>
-                <div className="font-barlow font-bold text-navy text-xl leading-none">SENERGY</div>
-                <div className="text-xs text-gray-500 leading-none">Levage & Manutention</div>
-              </div>
+            <Link href={`/${locale}`} className="flex items-center flex-shrink-0">
+              <Image src="/logo.png" alt="Senergy" width={120} height={60} className="h-12 w-auto object-contain" />
             </Link>
 
             {/* Desktop nav */}
@@ -191,7 +186,7 @@ export default function Header() {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-lightbg"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >

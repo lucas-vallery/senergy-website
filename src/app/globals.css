@@ -10,7 +10,7 @@
 }
 
 body {
-  color: #1a1a2e;
+  color: var(--textdark);
   background: #ffffff;
   font-family: var(--font-inter), Inter, Arial, sans-serif;
 }
@@ -35,12 +35,12 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--lightbg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a3d8c;
+  background: var(--navy);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7dc142;
+  background: var(--orange);
 }
