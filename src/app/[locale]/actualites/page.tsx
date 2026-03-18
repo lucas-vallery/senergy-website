@@ -73,7 +73,7 @@ export default async function NewsPage({ params }: { params: { locale: string } 
           size="small"
         />
 
-        <section className="py-20 bg-lightbg">
+        <section className="py-20 bg-surface-container-low">
           <div className="max-w-7xl mx-auto px-4">
             {/* Categories filter (static display) */}
             <div className="flex flex-wrap gap-2 mb-10">
@@ -82,8 +82,8 @@ export default async function NewsPage({ params }: { params: { locale: string } 
                   key={cat}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     i === 0
-                      ? 'bg-navy text-white'
-                      : 'bg-white text-gray-600 border border-gray-200 hover:border-navy hover:text-navy'
+                      ? 'bg-primary text-white'
+                      : 'bg-white text-gray-600 border border-gray-200 hover:border-primary hover:text-primary'
                   }`}
                 >
                   {cat}
@@ -94,19 +94,19 @@ export default async function NewsPage({ params }: { params: { locale: string } 
             {/* Featured article */}
             <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all mb-8">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="h-64 lg:h-auto bg-gradient-to-br from-navy/10 to-navy/20 flex items-center justify-center">
+                <div className="h-64 lg:h-auto bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Tag size={28} className="text-orange" />
+                    <div className="w-16 h-16 bg-[#b8f568]/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                      <Tag size={28} className="text-[#b8f568]" />
                     </div>
-                    <span className="text-navy/50 text-sm">Photo à venir</span>
+                    <span className="text-primary/50 text-sm">Photo à venir</span>
                   </div>
                 </div>
                 <div className="p-8 flex flex-col justify-center">
-                  <span className="inline-block bg-orange text-white text-xs font-semibold px-2.5 py-1 rounded mb-4 self-start">
+                  <span className="inline-block bg-[#b8f568] text-[#467000] text-xs font-bold px-2.5 py-1 rounded mb-4 self-start">
                     {newsItems[0].category}
                   </span>
-                  <h2 className="font-barlow font-bold text-navy text-2xl mb-3 leading-tight">
+                  <h2 className="font-barlow font-bold text-primary text-2xl mb-3 leading-tight">
                     {newsItems[0].title}
                   </h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">
@@ -118,7 +118,7 @@ export default async function NewsPage({ params }: { params: { locale: string } 
                   </div>
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 text-orange font-semibold text-sm hover:text-orange-dark transition-colors self-start"
+                    className="inline-flex items-center gap-2 text-[#b8f568] font-semibold text-sm hover:text-[#9dd84f] transition-colors self-start"
                   >
                     {t('readMore')} <ArrowRight size={14} />
                   </Link>
@@ -129,17 +129,17 @@ export default async function NewsPage({ params }: { params: { locale: string } 
             {/* News grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {newsItems.slice(1).map((news, i) => (
-                <article key={i} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-navy/20 hover:shadow-lg transition-all">
-                  <div className="h-44 bg-gradient-to-br from-navy/5 to-navy/10 flex items-center justify-center">
+                <article key={i} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all">
+                  <div className="h-44 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
                     <div className="w-12 h-12 bg-white/80 rounded-xl flex items-center justify-center">
-                      <Tag size={20} className="text-navy/40" />
+                      <Tag size={20} className="text-primary/40" />
                     </div>
                   </div>
                   <div className="p-6">
-                    <span className="inline-block bg-orange/10 text-orange text-xs font-semibold px-2.5 py-1 rounded mb-3">
+                    <span className="inline-block bg-[#b8f568]/10 text-[#467000] text-xs font-semibold px-2.5 py-1 rounded mb-3">
                       {news.category}
                     </span>
-                    <h3 className="font-barlow font-bold text-navy text-lg mb-2 leading-tight group-hover:text-orange transition-colors">
+                    <h3 className="font-barlow font-bold text-primary text-lg mb-2 leading-tight group-hover:text-[#b8f568] transition-colors">
                       {news.title}
                     </h3>
                     <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
@@ -152,7 +152,7 @@ export default async function NewsPage({ params }: { params: { locale: string } 
                       </div>
                       <Link
                         href="#"
-                        className="inline-flex items-center gap-1 text-orange text-xs font-semibold hover:text-orange-dark transition-colors"
+                        className="inline-flex items-center gap-1 text-[#b8f568] text-xs font-semibold hover:text-[#9dd84f] transition-colors"
                       >
                         {t('readMore')} <ArrowRight size={11} />
                       </Link>
@@ -165,11 +165,11 @@ export default async function NewsPage({ params }: { params: { locale: string } 
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-navy">
+        <section className="py-16 bg-primary">
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="font-barlow text-2xl font-bold text-white mb-3">Restez informé</h2>
             <p className="text-white/70 mb-6">Suivez les actualités de SENERGY pour rester à la pointe des innovations en levage industriel.</p>
-            <Link href="../contact" className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-lg hover:bg-orange-dark transition-colors">
+            <Link href="../contact" className="inline-flex items-center gap-2 bg-[#b8f568] text-[#467000] font-bold px-6 py-3 rounded-lg hover:bg-[#9dd84f] transition-colors">
               {tCommon('contactUs')} <ArrowRight size={16} />
             </Link>
           </div>

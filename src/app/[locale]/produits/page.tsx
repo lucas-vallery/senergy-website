@@ -36,38 +36,38 @@ export default async function ProductsPage({ params }: { params: { locale: strin
       title: 'Radiocommande IMET M880',
       desc: 'Radiocommande compacte IP65, jusqu\'à 16 fonctions, pour ponts roulants et grues industrielles.',
       href: '../electronique/radiocommandes',
-      icon: <Radio size={22} className="text-navy" />,
+      icon: <Radio size={22} className="text-primary" />,
       badge: 'Best-seller',
     },
     {
       title: 'Radiocommande IMET MR900',
       desc: 'Solution multi-récepteurs pour grandes installations industrielles. Sécurité et redondance.',
       href: '../electronique/radiocommandes',
-      icon: <Radio size={22} className="text-navy" />,
+      icon: <Radio size={22} className="text-primary" />,
     },
     {
       title: 'Radiocommande Joystick IMET',
       desc: 'Contrôle précis par joystick pour les applications nécessitant une grande dextérité.',
       href: '../electronique/radiocommandes',
-      icon: <Radio size={22} className="text-navy" />,
+      icon: <Radio size={22} className="text-primary" />,
     },
     {
       title: 'Radiocommande IMET TR',
       desc: 'Conçue pour camions-grues, résistante aux conditions extérieures. IP67.',
       href: '../electronique/radiocommandes',
-      icon: <Radio size={22} className="text-navy" />,
+      icon: <Radio size={22} className="text-primary" />,
     },
     {
       title: 'Automatismes industriels',
       desc: 'Systèmes d\'automatisation pour optimiser vos processus de levage et manutention.',
       href: '../electronique',
-      icon: <Cpu size={22} className="text-navy" />,
+      icon: <Cpu size={22} className="text-primary" />,
     },
     {
       title: 'Capteurs & détection',
       desc: 'Solutions de pesage, mesure et détection pour la sécurité de vos installations.',
       href: '../electronique',
-      icon: <Activity size={22} className="text-navy" />,
+      icon: <Activity size={22} className="text-primary" />,
     },
   ];
 
@@ -76,32 +76,32 @@ export default async function ProductsPage({ params }: { params: { locale: strin
       title: 'Groupe hydraulique standard',
       desc: 'Centrales hydrauliques compactes pour applications industrielles courantes.',
       href: '../hydraulique',
-      icon: <Gauge size={22} className="text-navy" />,
+      icon: <Gauge size={22} className="text-primary" />,
     },
     {
       title: 'Groupe hydraulique sur mesure',
       desc: 'Conception et fabrication de centrales hydrauliques selon vos spécifications.',
       href: '../hydraulique',
-      icon: <Gauge size={22} className="text-navy" />,
+      icon: <Gauge size={22} className="text-primary" />,
       badge: 'Sur mesure',
     },
     {
       title: 'Distributeurs hydrauliques',
       desc: 'Distributeurs manuels, électrohydrauliques et proportionnels pour tous types d\'actionneurs.',
       href: '../hydraulique',
-      icon: <GitBranch size={22} className="text-navy" />,
+      icon: <GitBranch size={22} className="text-primary" />,
     },
     {
       title: 'Vérins hydrauliques',
       desc: 'Vérins simple et double effet, télescopiques, pour toutes charges et courses.',
       href: '../hydraulique',
-      icon: <ArrowUpDown size={22} className="text-navy" />,
+      icon: <ArrowUpDown size={22} className="text-primary" />,
     },
     {
       title: 'Pompes hydrauliques',
       desc: 'Pompes à engrenages, pistons et palettes pour tous débits et pressions.',
       href: '../hydraulique',
-      icon: <Droplets size={22} className="text-navy" />,
+      icon: <Droplets size={22} className="text-primary" />,
     },
   ];
 
@@ -110,26 +110,26 @@ export default async function ProductsPage({ params }: { params: { locale: strin
       title: 'Carrosseries sur mesure',
       desc: 'Conception et fabrication de carrosseries spéciales pour véhicules utilitaires.',
       href: '../carrosserie',
-      icon: <Truck size={22} className="text-navy" />,
+      icon: <Truck size={22} className="text-primary" />,
       badge: 'Sur mesure',
     },
     {
       title: 'Bennes basculantes',
       desc: 'Bennes AR, 3 côtés, ampliroll pour véhicules de travaux et collecte.',
       href: '../carrosserie',
-      icon: <Package size={22} className="text-navy" />,
+      icon: <Package size={22} className="text-primary" />,
     },
     {
       title: 'Grues auxiliaires',
       desc: 'Installation et maintenance de grues Palfinger, Hiab, Fassi sur camions.',
       href: '../carrosserie',
-      icon: <LifeBuoy size={22} className="text-navy" />,
+      icon: <LifeBuoy size={22} className="text-primary" />,
     },
     {
       title: 'Hayons élévateurs',
       desc: 'Hayons colonne, bras et sous-caisse pour faciliter le chargement/déchargement.',
       href: '../carrosserie',
-      icon: <ArrowUpDown size={22} className="text-navy" />,
+      icon: <ArrowUpDown size={22} className="text-primary" />,
     },
   ];
 
@@ -139,22 +139,22 @@ export default async function ProductsPage({ params }: { params: { locale: strin
         <Link
           key={i}
           href={p.href}
-          className="group bg-white rounded-xl border border-gray-100 hover:border-orange/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
+          className="group bg-white rounded-xl border border-gray-100 hover:border-[#b8f568]/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
         >
-          <div className="h-36 bg-gradient-to-br from-navy/5 to-navy/10 flex items-center justify-center relative">
+          <div className="h-36 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center relative">
             <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:scale-105 transition-transform">
               {p.icon}
             </div>
             {p.badge && (
-              <span className="absolute top-3 right-3 bg-orange text-white text-xs font-semibold px-2 py-0.5 rounded">
+              <span className="absolute top-3 right-3 bg-[#b8f568] text-[#467000] text-xs font-bold px-2 py-0.5 rounded">
                 {p.badge}
               </span>
             )}
           </div>
           <div className="p-5">
-            <h3 className="font-barlow font-semibold text-navy text-sm mb-1.5 group-hover:text-orange transition-colors">{p.title}</h3>
+            <h3 className="font-barlow font-semibold text-primary text-sm mb-1.5 group-hover:text-[#467000] transition-colors">{p.title}</h3>
             <p className="text-xs text-gray-500 leading-relaxed mb-3">{p.desc}</p>
-            <div className="flex items-center gap-1 text-orange text-xs font-semibold">
+            <div className="flex items-center gap-1 text-[#b8f568] text-xs font-semibold">
               {tCommon('learnMore')} <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
             </div>
           </div>
@@ -179,10 +179,10 @@ export default async function ProductsPage({ params }: { params: { locale: strin
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-orange text-sm font-semibold uppercase tracking-wider">Division 01</span>
+                <span className="text-[#b8f568] text-sm font-semibold uppercase tracking-wider">Division 01</span>
                 <SectionTitle title={t('sectionsElectronics')} />
               </div>
-              <Link href="../electronique" className="hidden md:inline-flex items-center gap-2 text-navy font-semibold text-sm hover:text-orange transition-colors">
+              <Link href="../electronique" className="hidden md:inline-flex items-center gap-2 text-primary font-semibold text-sm hover:text-[#b8f568] transition-colors">
                 {tNav('electronics')} <ArrowRight size={14} />
               </Link>
             </div>
@@ -191,14 +191,14 @@ export default async function ProductsPage({ params }: { params: { locale: strin
         </section>
 
         {/* Hydraulics section */}
-        <section className="py-20 bg-lightbg">
+        <section className="py-20 bg-surface-container-low">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-orange text-sm font-semibold uppercase tracking-wider">Division 02</span>
+                <span className="text-[#b8f568] text-sm font-semibold uppercase tracking-wider">Division 02</span>
                 <SectionTitle title={t('sectionsHydraulics')} />
               </div>
-              <Link href="../hydraulique" className="hidden md:inline-flex items-center gap-2 text-navy font-semibold text-sm hover:text-orange transition-colors">
+              <Link href="../hydraulique" className="hidden md:inline-flex items-center gap-2 text-primary font-semibold text-sm hover:text-[#b8f568] transition-colors">
                 {tNav('hydraulics')} <ArrowRight size={14} />
               </Link>
             </div>
@@ -211,10 +211,10 @@ export default async function ProductsPage({ params }: { params: { locale: strin
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <span className="text-orange text-sm font-semibold uppercase tracking-wider">Division 03</span>
+                <span className="text-[#b8f568] text-sm font-semibold uppercase tracking-wider">Division 03</span>
                 <SectionTitle title={t('sectionsBodywork')} />
               </div>
-              <Link href="../carrosserie" className="hidden md:inline-flex items-center gap-2 text-navy font-semibold text-sm hover:text-orange transition-colors">
+              <Link href="../carrosserie" className="hidden md:inline-flex items-center gap-2 text-primary font-semibold text-sm hover:text-[#b8f568] transition-colors">
                 {tNav('bodywork')} <ArrowRight size={14} />
               </Link>
             </div>
@@ -223,11 +223,11 @@ export default async function ProductsPage({ params }: { params: { locale: strin
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-navy">
+        <section className="py-16 bg-primary">
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="font-barlow text-3xl font-bold text-white mb-4">Vous ne trouvez pas ce que vous cherchez ?</h2>
             <p className="text-white/70 mb-8">Contactez notre équipe pour une solution personnalisée adaptée à votre projet.</p>
-            <Link href="../contact" className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-orange-dark transition-colors">
+            <Link href="../contact" className="inline-flex items-center gap-2 bg-[#b8f568] text-[#467000] font-bold px-7 py-3.5 rounded-lg hover:bg-[#9dd84f] transition-colors">
               {tCommon('contactUs')} <ArrowRight size={16} />
             </Link>
           </div>

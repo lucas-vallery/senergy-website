@@ -83,17 +83,17 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-16 h-16 bg-orange/10 rounded-full flex items-center justify-center mb-4">
-          <CheckCircle size={32} className="text-orange" />
+        <div className="w-16 h-16 bg-[#b8f568]/10 rounded-full flex items-center justify-center mb-4">
+          <CheckCircle size={32} className="text-[#b8f568]" />
         </div>
-        <h3 className="font-barlow text-2xl font-bold text-navy mb-2">{t('success.title')}</h3>
+        <h3 className="font-barlow text-2xl font-bold text-primary mb-2">{t('success.title')}</h3>
         <p className="text-gray-500 max-w-sm">{t('success.text')}</p>
       </div>
     );
   }
 
   const inputClasses = (error?: string) =>
-    `w-full px-4 py-3 border rounded-lg text-sm text-textdark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition-colors ${
+    `w-full px-4 py-3 border rounded-lg text-sm text-on-surface placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors ${
       error ? 'border-red-400 bg-red-50' : 'border-gray-200 bg-white hover:border-gray-300'
     }`;
 
@@ -102,8 +102,8 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
       {/* Name row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
-            {t('fields.firstName')} <span className="text-orange">*</span>
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
+            {t('fields.firstName')} <span className="text-[#b8f568]">*</span>
           </label>
           <input
             type="text"
@@ -120,8 +120,8 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
           )}
         </div>
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
-            {t('fields.lastName')} <span className="text-orange">*</span>
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
+            {t('fields.lastName')} <span className="text-[#b8f568]">*</span>
           </label>
           <input
             type="text"
@@ -142,8 +142,8 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
       {/* Email & Phone */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
-            {t('fields.email')} <span className="text-orange">*</span>
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
+            {t('fields.email')} <span className="text-[#b8f568]">*</span>
           </label>
           <input
             type="email"
@@ -160,7 +160,7 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
           )}
         </div>
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
             {t('fields.phone')}
           </label>
           <input
@@ -177,7 +177,7 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
       {/* Company & Subject */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
             {t('fields.company')}
           </label>
           <input
@@ -190,7 +190,7 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
             {t('fields.subject')}
           </label>
           <select
@@ -212,7 +212,7 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
       {/* Equipment field for SAV */}
       {includeEquipment && (
         <div>
-          <label className="block text-sm font-medium text-textdark mb-1.5">
+          <label className="block text-sm font-medium text-on-surface mb-1.5">
             Équipement concerné
           </label>
           <input
@@ -227,8 +227,8 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
 
       {/* Message */}
       <div>
-        <label className="block text-sm font-medium text-textdark mb-1.5">
-          {t('fields.message')} <span className="text-orange">*</span>
+        <label className="block text-sm font-medium text-on-surface mb-1.5">
+          {t('fields.message')} <span className="text-[#b8f568]">*</span>
         </label>
         <textarea
           name="message"
@@ -253,7 +253,7 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
             name="gdpr"
             checked={formData.gdpr}
             onChange={handleChange}
-            className="mt-0.5 w-4 h-4 accent-navy cursor-pointer"
+            className="mt-0.5 w-4 h-4 accent-primary cursor-pointer"
           />
           <span className="text-sm leading-relaxed">{t('fields.gdpr')}</span>
         </label>
@@ -267,7 +267,7 @@ export default function ContactForm({ includeEquipment = false }: ContactFormPro
       {/* Submit */}
       <button
         type="submit"
-        className="w-full bg-navy text-white font-semibold py-3.5 px-6 rounded-lg hover:bg-navy-dark transition-colors focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
+        className="w-full bg-primary text-white font-semibold py-3.5 px-6 rounded-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
         {t('fields.submit')}
       </button>

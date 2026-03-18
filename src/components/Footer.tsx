@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getTranslations, getLocale } from 'next-intl/server';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default async function Footer() {
   const locale = await getLocale();
@@ -9,139 +9,140 @@ export default async function Footer() {
   const tNav = await getTranslations('nav');
 
   return (
-    <footer className="bg-lightbg text-textdark">
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Company info */}
-          <div className="lg:col-span-1">
-            <div className="mb-4">
-              <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.png`} alt="Senergy" width={120} height={60} className="h-14 w-auto object-contain rounded-lg" />
+    <footer className="bg-[#002058] text-white w-full pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-16">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <div className="mb-6">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.png`}
+                alt="Senergy"
+                width={110}
+                height={55}
+                className="h-12 w-auto object-contain rounded-lg"
+              />
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="font-label text-xs uppercase tracking-widest text-slate-400 leading-relaxed mb-8">
               {t('tagline')}
             </p>
-            <div className="space-y-2.5">
-              <div className="flex items-start gap-2.5 text-sm text-gray-600">
-                <MapPin size={14} className="mt-0.5 flex-shrink-0 text-navy" />
-                <span>6 Rue du Capitaine Georges Madon<br />ZAC La Croix Blandin<br />51100 REIMS — France</span>
+            <div className="space-y-2 text-slate-400 text-xs font-label uppercase tracking-widest">
+              <div className="flex items-start gap-2">
+                <MapPin size={12} className="mt-0.5 flex-shrink-0 text-[#b8f568]" />
+                <span>
+                  6 Rue du Capitaine Georges Madon
+                  <br />
+                  51100 REIMS — France
+                </span>
               </div>
-              <a href="tel:+33326790050" className="flex items-center gap-2.5 text-sm text-gray-600 hover:text-orange transition-colors">
-                <Phone size={14} className="flex-shrink-0 text-navy" />
-                <span>(+33) (0)3.26.79.00.50</span>
+              <a
+                href="tel:+33326790050"
+                className="flex items-center gap-2 hover:text-[#b8f568] transition-colors"
+              >
+                <Phone size={12} className="text-[#b8f568]" />
+                (+33) (0)3.26.79.00.50
               </a>
-              <a href="mailto:contactsite@senergy.fr" className="flex items-center gap-2.5 text-sm text-gray-600 hover:text-orange transition-colors">
-                <Mail size={14} className="flex-shrink-0 text-navy" />
-                <span>contactsite@senergy.fr</span>
+              <a
+                href="mailto:contactsite@senergy.fr"
+                className="flex items-center gap-2 hover:text-[#b8f568] transition-colors"
+              >
+                <Mail size={12} className="text-[#b8f568]" />
+                contactsite@senergy.fr
               </a>
-              <div className="flex items-center gap-2.5 text-sm text-gray-600">
-                <Clock size={14} className="flex-shrink-0 text-navy" />
-                <span>Lun–Ven: 8h00 – 18h00</span>
-              </div>
             </div>
           </div>
 
-          {/* Divisions */}
+          {/* Navigation */}
           <div>
-            <h3 className="font-barlow font-semibold text-navy text-base mb-4 uppercase tracking-wider">{t('divisions')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href={`/${locale}/electronique`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('electronics')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/electronique/radiocommandes`} className="text-sm text-gray-500 hover:text-orange transition-colors pl-3 border-l border-gray-300">
-                  {tNav('radiocontrols')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/hydraulique`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('hydraulics')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/carrosserie`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('bodywork')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/produits`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('products')}
-                </Link>
-              </li>
+            <h4 className="font-label font-bold text-white mb-6 uppercase tracking-widest text-xs">
+              Navigation
+            </h4>
+            <ul className="space-y-4 font-label text-xs uppercase tracking-widest text-slate-400">
+              {[
+                { href: `/${locale}`, label: tNav('home') },
+                { href: `/${locale}/produits`, label: tNav('products') },
+                { href: `/${locale}/electronique`, label: tNav('electronics') },
+                { href: `/${locale}/hydraulique`, label: tNav('hydraulics') },
+                { href: `/${locale}/societe`, label: tNav('company') },
+              ].map(l => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="hover:text-white hover:underline decoration-[#426900] underline-offset-4 transition-all"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Quick links */}
+          {/* Services */}
           <div>
-            <h3 className="font-barlow font-semibold text-navy text-base mb-4 uppercase tracking-wider">{t('quickLinks')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href={`/${locale}`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('home')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/societe`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('company')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/sav`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('sav')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/actualites`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('news')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/contact`} className="text-sm text-gray-600 hover:text-orange transition-colors">
-                  {tNav('contact')}
-                </Link>
-              </li>
+            <h4 className="font-label font-bold text-white mb-6 uppercase tracking-widest text-xs">
+              Services
+            </h4>
+            <ul className="space-y-4 font-label text-xs uppercase tracking-widest text-slate-400">
+              {[
+                { href: `/${locale}/sav`, label: tNav('sav') },
+                { href: `/${locale}/carrosserie`, label: tNav('bodywork') },
+                { href: `/${locale}/actualites`, label: tNav('news') },
+                { href: `/${locale}/contact`, label: tNav('contact') },
+              ].map(l => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="hover:text-white hover:underline decoration-[#426900] underline-offset-4 transition-all"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* SAV CTA */}
+          {/* Contact CTA */}
           <div>
-            <h3 className="font-barlow font-semibold text-navy text-base mb-4 uppercase tracking-wider">Service Après-Vente</h3>
-            <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-              <p className="text-sm text-gray-600 mb-3">Besoin d&apos;une intervention technique ? Notre SAV est disponible :</p>
+            <h4 className="font-label font-bold text-white mb-6 uppercase tracking-widest text-xs">
+              Service Après-Vente
+            </h4>
+            <div className="bg-white/5 p-6 rounded-xl border border-white/10">
               <a
                 href="tel:+33326790050"
-                className="flex items-center gap-2 text-navy font-semibold text-sm hover:text-orange transition-colors mb-2"
+                className="text-[#b8f568] font-headline font-bold text-sm hover:underline block mb-1"
               >
-                <Phone size={14} />
                 (0)3.26.79.00.50
               </a>
+              <p className="text-slate-400 text-xs font-label uppercase tracking-widest mb-4">
+                Lun–Ven: 8h00 – 18h00
+              </p>
               <a
                 href="mailto:benoit.lallement@senergy.fr"
-                className="text-xs text-gray-500 hover:text-navy transition-colors block mb-3"
+                className="text-slate-400 text-xs hover:text-[#b8f568] transition-colors block mb-4"
               >
                 benoit.lallement@senergy.fr
               </a>
               <Link
                 href={`/${locale}/sav`}
-                className="block text-center bg-orange text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-orange-dark transition-colors"
+                className="block text-center bg-[#b8f568] text-[#467000] text-xs font-bold font-label uppercase tracking-widest px-4 py-2.5 rounded hover:bg-[#9dd84f] transition-colors"
               >
                 Demande SAV
               </Link>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-sm text-gray-400">{t('copyright')}</p>
-          <div className="flex items-center gap-4 text-sm text-gray-400">
+        {/* Bottom bar */}
+        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-label text-xs uppercase tracking-widest text-slate-400">
+            {t('copyright')}
+          </p>
+          <div className="flex gap-8 font-label text-xs uppercase tracking-widest text-slate-400">
             <span>{t('siren')}</span>
-            <span>|</span>
-            <Link href={`/${locale}/contact`} className="hover:text-navy transition-colors">{t('legalNotice')}</Link>
+            <span className="text-slate-600">|</span>
+            <Link href={`/${locale}/contact`} className="hover:text-[#b8f568] transition-colors">
+              {t('legalNotice')}
+            </Link>
           </div>
         </div>
       </div>
