@@ -9,8 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        navy: {
+          DEFAULT: "#1c4573",
+          dark: "#152f50",
+          light: "#2557a0",
+        },
+        orange: {
+          DEFAULT: "#e85d1a",
+          dark: "#c44e15",
+          light: "#f0763a",
+        },
+        lightbg: "#f5f7fa",
+        textdark: "#1a1a2e",
+      },
+      fontFamily: {
+        barlow: ["var(--font-barlow)", "Barlow", "sans-serif"],
+        inter: ["var(--font-inter)", "Inter", "sans-serif"],
       },
     },
   },

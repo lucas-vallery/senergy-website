@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Senergy — Website
 
-## Getting Started
+Modern static website for **Senergy Reims**, a B2B industrial company specializing in lifting and material handling equipment (levage & manutention).
 
-First, run the development server:
+## Quick Start
+
+All commands must be run from the `site/` directory.
+
+```bash
+cd site
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The browser will redirect to `/fr` automatically.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Generates a fully static site in the `out/` directory.
 
-To learn more about Next.js, take a look at the following resources:
+### Preview the production build locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx serve out
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or any static file server pointing at `site/out/`.
 
-## Deploy on Vercel
+### Lint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adding / editing content
+
+All text content lives in two JSON files:
+
+| File | Language |
+|---|---|
+| `src/messages/fr.json` | French |
+| `src/messages/en.json` | English |
+
+Edit both files to keep translations in sync.
+
+## Adding a new page
+
+1. Create `src/app/[locale]/your-page/page.tsx`
+2. Add the corresponding translation keys to both `fr.json` and `en.json`
+3. Link to the page using `/${locale}/your-page`
+
+## Deployment
+
+The `out/` folder produced by `npm run build` is a self-contained static site. It can be deployed to:
+
+- **Vercel** — push to GitHub and import the repo; set the root directory to `site/`
+- **Netlify** — drag and drop the `out/` folder, or connect via Git
+- **Any static host** — upload the contents of `out/` to your web server or CDN
