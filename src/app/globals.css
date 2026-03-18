@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --navy: #1c4573;
-  --orange: #e85d1a;
+  --navy: #1a3d8c;
+  --orange: #7dc142;
   --lightbg: #f5f7fa;
   --textdark: #1a1a2e;
 }
@@ -38,9 +38,9 @@ html {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c4573;
+  background: #1a3d8c;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e85d1a;
+  background: #7dc142;
 }

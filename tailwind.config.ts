@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#1c4573",
-          dark: "#152f50",
-          light: "#2557a0",
+          DEFAULT: "#1a3d8c",
+          dark: "#122c6b",
+          light: "#2a56be",
         },
         orange: {
-          DEFAULT: "#e85d1a",
-          dark: "#c44e15",
-          light: "#f0763a",
+          DEFAULT: "#7dc142",
+          dark: "#5a9030",
+          light: "#9ed164",
         },
         lightbg: "#f5f7fa",
         textdark: "#1a1a2e",
