@@ -277,12 +277,12 @@ export default async function HomePage({ params }: { params: { locale: string } 
             </div>
             <div className="flex flex-wrap justify-center items-center gap-6">
               {[
-                { src: '/images/partner-imet.png', alt: 'IMET — radiocommandes industrielles' },
-                { src: '/images/partner-bpe.jpg', alt: 'BPE — capteurs' },
-                { src: '/images/partner-treuils.png', alt: 'Treuils et réducteurs' },
-                { src: '/images/partner-oesse.jpg', alt: 'OESSE — échangeurs' },
-                { src: '/images/partner-sistematica.png', alt: 'Sistematica — radiocommandes' },
-                { src: '/images/partner-demac.jpg', alt: 'DEMAC SRL — enrouleurs' },
+                { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-imet.png`, alt: 'IMET — radiocommandes industrielles' },
+                { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-bpe.jpg`, alt: 'BPE — capteurs' },
+                { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-treuils.png`, alt: 'Treuils et réducteurs' },
+                { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-oesse.jpg`, alt: 'OESSE — échangeurs' },
+                { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-sistematica.png`, alt: 'Sistematica — radiocommandes' },
+                { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-demac.jpg`, alt: 'DEMAC SRL — enrouleurs' },
               ].map((logo) => (
                 <div
                   key={logo.src}

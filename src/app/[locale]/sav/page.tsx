@@ -116,21 +116,21 @@ export default async function SAVPage({ params }: { params: { locale: string } }
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Image
-                src="/images/sav-atelier-1.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/sav-atelier-1.jpg`}
                 alt="Atelier SAV Senergy"
                 width={600}
                 height={400}
                 className="rounded-xl shadow-md w-full h-64 object-cover"
               />
               <Image
-                src="/images/sav-atelier-2.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/sav-atelier-2.jpg`}
                 alt="Atelier SAV Senergy — vue 2"
                 width={600}
                 height={400}
                 className="rounded-xl shadow-md w-full h-64 object-cover"
               />
               <Image
-                src="/images/sav-intervention.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/sav-intervention.jpg`}
                 alt="Intervention terrain SAV Senergy"
                 width={600}
                 height={400}

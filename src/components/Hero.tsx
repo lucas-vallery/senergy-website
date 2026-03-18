@@ -72,7 +72,7 @@ export default function Hero({ title, subtitle, ctaPrimary, ctaSecondary, patter
       {/* Background pattern */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-grappin-ferraille.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/hero-grappin-ferraille.png`}
           alt="Grappin ferraille industriel"
           fill
           className="object-cover"

@@ -25,7 +25,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
   const series = [
     {
       model: 'M880',
-      image: '/images/electronique-module-wave2.png',
+      image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/electronique-module-wave2.png`,
       colorClass: 'bg-navy/5 border-navy/10',
       iconColorClass: 'bg-navy/10',
       accentColorClass: 'text-navy',
@@ -35,7 +35,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
     },
     {
       model: 'MR900',
-      image: '/images/electronique-module-zeus2.png',
+      image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/electronique-module-zeus2.png`,
       colorClass: 'bg-navy/5 border-navy/10',
       iconColorClass: 'bg-navy/10',
       accentColorClass: 'text-navy',
@@ -45,7 +45,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
     },
     {
       model: 'Joystick',
-      image: '/images/electronique-carte-lld150i.jpg',
+      image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/electronique-carte-lld150i.jpg`,
       colorClass: 'bg-orange/5 border-orange/10',
       iconColorClass: 'bg-orange/10',
       accentColorClass: 'text-orange',
@@ -55,7 +55,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
     },
     {
       model: 'TR Series',
-      image: '/images/electronique-carte-lld300m82.png',
+      image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/electronique-carte-lld300m82.png`,
       colorClass: 'bg-orange/5 border-orange/10',
       iconColorClass: 'bg-orange/10',
       accentColorClass: 'text-orange',

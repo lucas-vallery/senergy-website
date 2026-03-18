@@ -16,7 +16,7 @@ export default async function Footer() {
           {/* Company info */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <Image src="/logo.png" alt="Senergy" width={120} height={60} className="h-14 w-auto object-contain rounded-lg" />
+              <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.png`} alt="Senergy" width={120} height={60} className="h-14 w-auto object-contain rounded-lg" />
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
               {t('tagline')}

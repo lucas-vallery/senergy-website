@@ -110,7 +110,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href={`/${locale}`} className="flex items-center flex-shrink-0">
-              <Image src="/logo.png" alt="Senergy" width={120} height={60} className="h-12 w-auto object-contain" />
+              <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.png`} alt="Senergy" width={120} height={60} className="h-12 w-auto object-contain" />
             </Link>
 
             {/* Desktop nav */}

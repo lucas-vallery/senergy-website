@@ -88,7 +88,7 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
               </div>
               <div className="space-y-6">
                 <Image
-                  src="/images/hydraulique-groupe-dinamic-oil.jpg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/hydraulique-groupe-dinamic-oil.jpg`}
                   alt="Groupe hydraulique Dinamic Oil"
                   width={600}
                   height={400}

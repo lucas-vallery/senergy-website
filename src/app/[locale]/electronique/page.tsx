@@ -106,9 +106,9 @@ export default async function ElectronicsPage({ params }: { params: { locale: st
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
               {categories.map((cat) => {
                 const categoryImages: Record<string, string> = {
-                  radiocommandes: '/images/partner-imet.png',
-                  automatismes: '/images/electronique-carte-lld300m82.png',
-                  capteurs: '/images/electronique-detecteur-devers.png',
+                  radiocommandes: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/partner-imet.png`,
+                  automatismes: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/electronique-carte-lld300m82.png`,
+                  capteurs: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/electronique-detecteur-devers.png`,
                 };
                 const imgSrc = categoryImages[cat.id];
                 return (
