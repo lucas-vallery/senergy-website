@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Radio, Cpu, Activity, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -103,8 +104,26 @@ export default async function ElectronicsPage({ params }: { params: { locale: st
           <div className="max-w-7xl mx-auto px-4">
             <SectionTitle title="Nos gammes de produits" center />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-              {categories.map((cat) => (
+              {categories.map((cat) => {
+                const categoryImages: Record<string, string> = {
+                  radiocommandes: '/images/partner-imet.png',
+                  automatismes: '/images/electronique-carte-lld300m82.png',
+                  capteurs: '/images/electronique-detecteur-devers.png',
+                };
+                const imgSrc = categoryImages[cat.id];
+                return (
                 <div key={cat.id} id={cat.id} className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-orange/30 hover:shadow-xl transition-all duration-300">
+                  {imgSrc && (
+                    <div className="mb-5 rounded-xl overflow-hidden bg-lightbg flex items-center justify-center h-36">
+                      <Image
+                        src={imgSrc}
+                        alt={cat.title}
+                        width={200}
+                        height={144}
+                        className="w-full h-36 object-contain p-3"
+                      />
+                    </div>
+                  )}
                   <div className="w-14 h-14 bg-orange/10 rounded-xl flex items-center justify-center mb-5">
                     {cat.icon}
                   </div>
@@ -133,7 +152,8 @@ export default async function ElectronicsPage({ params }: { params: { locale: st
                     </Link>
                   )}
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         </section>

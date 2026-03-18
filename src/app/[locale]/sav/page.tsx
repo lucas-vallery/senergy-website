@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Phone, Mail, Zap, Shield, Package, Headphones, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -106,6 +107,35 @@ export default async function SAVPage({ params }: { params: { locale: string } }
                   <p className="text-white/60 text-sm">Lun – Ven : 8h00 – 18h00</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Workshop photos */}
+        <section className="py-12 bg-lightbg">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Image
+                src="/images/sav-atelier-1.jpg"
+                alt="Atelier SAV Senergy"
+                width={600}
+                height={400}
+                className="rounded-xl shadow-md w-full h-64 object-cover"
+              />
+              <Image
+                src="/images/sav-atelier-2.jpg"
+                alt="Atelier SAV Senergy — vue 2"
+                width={600}
+                height={400}
+                className="rounded-xl shadow-md w-full h-64 object-cover"
+              />
+              <Image
+                src="/images/sav-intervention.jpg"
+                alt="Intervention terrain SAV Senergy"
+                width={600}
+                height={400}
+                className="rounded-xl shadow-md w-full h-64 object-cover"
+              />
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Radio, Shield, Wifi, Battery, Thermometer, Signal } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -24,6 +25,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
   const series = [
     {
       model: 'M880',
+      image: '/images/electronique-module-wave2.png',
       colorClass: 'bg-navy/5 border-navy/10',
       iconColorClass: 'bg-navy/10',
       accentColorClass: 'text-navy',
@@ -33,6 +35,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
     },
     {
       model: 'MR900',
+      image: '/images/electronique-module-zeus2.png',
       colorClass: 'bg-navy/5 border-navy/10',
       iconColorClass: 'bg-navy/10',
       accentColorClass: 'text-navy',
@@ -42,6 +45,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
     },
     {
       model: 'Joystick',
+      image: '/images/electronique-carte-lld150i.jpg',
       colorClass: 'bg-orange/5 border-orange/10',
       iconColorClass: 'bg-orange/10',
       accentColorClass: 'text-orange',
@@ -51,6 +55,7 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
     },
     {
       model: 'TR Series',
+      image: '/images/electronique-carte-lld300m82.png',
       colorClass: 'bg-orange/5 border-orange/10',
       iconColorClass: 'bg-orange/10',
       accentColorClass: 'text-orange',
@@ -117,6 +122,15 @@ export default async function RadioControlsPage({ params }: { params: { locale: 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
               {series.map((s) => (
                 <div key={s.model} className={`rounded-2xl p-8 border ${s.colorClass} transition-all hover:shadow-lg`}>
+                  <div className="mb-5 rounded-xl overflow-hidden bg-white/60 flex items-center justify-center h-40">
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      width={200}
+                      height={150}
+                      className="w-full h-40 object-contain"
+                    />
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className={`w-12 h-12 ${s.iconColorClass} rounded-xl flex items-center justify-center`}>
                       <Radio size={22} className={s.accentColorClass} />

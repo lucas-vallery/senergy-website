@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Gauge, GitBranch, ArrowUpDown, Droplets, CheckCircle, Wrench } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -85,6 +86,14 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
                   ))}
                 </div>
               </div>
+              <div className="space-y-6">
+                <Image
+                  src="/images/hydraulique-groupe-dinamic-oil.jpg"
+                  alt="Groupe hydraulique Dinamic Oil"
+                  width={600}
+                  height={400}
+                  className="rounded-xl shadow-lg w-full object-cover"
+                />
               <div className="bg-navy rounded-2xl p-8 text-white">
                 <div className="w-12 h-12 bg-orange/20 rounded-xl flex items-center justify-center mb-5">
                   <Wrench size={24} className="text-orange" />
@@ -97,6 +106,7 @@ export default async function HydraulicsPage({ params }: { params: { locale: str
                 >
                   Nous contacter <ArrowRight size={14} />
                 </Link>
+              </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
@@ -70,7 +71,14 @@ export default function Hero({ title, subtitle, ctaPrimary, ctaSecondary, patter
     >
       {/* Background pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy-dark to-navy opacity-95" />
+        <Image
+          src="/images/hero-grappin-ferraille.png"
+          alt="Grappin ferraille industriel"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy-dark to-navy opacity-80" />
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
           <div className="absolute top-10 right-10 w-96 h-96 rounded-full border border-white" />
           <div className="absolute top-32 right-32 w-64 h-64 rounded-full border border-white" />

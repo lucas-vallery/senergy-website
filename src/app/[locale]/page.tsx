@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Award, Wrench, Settings, Shield, Zap, Gauge, Truck, Radio, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -262,6 +263,39 @@ export default async function HomePage({ params }: { params: { locale: string } 
                     Lire la suite <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Partners */}
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-10">
+              <p className="text-sm font-semibold text-orange uppercase tracking-wider mb-2">Nos partenaires</p>
+              <h2 className="font-barlow text-2xl font-bold text-navy">Our partners</h2>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              {[
+                { src: '/images/partner-imet.png', alt: 'IMET — radiocommandes industrielles' },
+                { src: '/images/partner-bpe.jpg', alt: 'BPE — capteurs' },
+                { src: '/images/partner-treuils.png', alt: 'Treuils et réducteurs' },
+                { src: '/images/partner-oesse.jpg', alt: 'OESSE — échangeurs' },
+                { src: '/images/partner-sistematica.png', alt: 'Sistematica — radiocommandes' },
+                { src: '/images/partner-demac.jpg', alt: 'DEMAC SRL — enrouleurs' },
+              ].map((logo) => (
+                <div
+                  key={logo.src}
+                  className="bg-white border border-gray-100 rounded-xl p-4 flex items-center justify-center hover:border-orange/30 hover:shadow-md transition-all"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={140}
+                    height={50}
+                    className="h-[50px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
               ))}
             </div>
           </div>
